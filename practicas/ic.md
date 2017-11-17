@@ -77,6 +77,7 @@ Ahora queremos que este proceso de "build" se haga de manera automática con tra
 * Activa tu repositorio en Travis.
 * Crea el fichero `.travis.yml` con el siguiente contenido:
 
+	```
 	language: python
 	branches:
 	  only:
@@ -85,6 +86,7 @@ Ahora queremos que este proceso de "build" se haga de manera automática con tra
 	- pip install pelican ghp-import markdown
 	script:
 	- make publish github
+	```
 
 * Sigue las instrucciones de este artículo: [Publish your Pelican blog on Github pages via Travis-CI](http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html) para crear un TOKEN en github, encriptarlo y añadirlo en el fichero `.travis.yml`.
 * Por último, cómo indica en el artículo, modifica el fichero `Makefile` para poder desplegar en github usando tu TOKEN. (Sustituye la variable `$(TRAVIS_REPO_SLUG)` pon el nombre de tu repositorio.)
